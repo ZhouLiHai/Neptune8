@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace neptune8\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use neptune8\User;
+use neptune8\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

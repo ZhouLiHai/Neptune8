@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        neptune8\Providers\AppServiceProvider::class,
+        neptune8\Providers\AuthServiceProvider::class,
+        // neptune8\Providers\BroadcastServiceProvider::class,
+        neptune8\Providers\EventServiceProvider::class,
+        neptune8\Providers\RouteServiceProvider::class,
 
     ],
 

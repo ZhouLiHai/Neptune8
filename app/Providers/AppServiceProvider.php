@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace neptune8\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
