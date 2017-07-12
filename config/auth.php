@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => neptune8\User::class,
+            'model' => Neptune8\User::class,
         ],
 
         // 'users' => [

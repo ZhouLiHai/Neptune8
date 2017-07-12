@@ -1,6 +1,6 @@
 <?php
 
-namespace neptune8\Exceptions;
+namespace Neptune8\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

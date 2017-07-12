@@ -1,6 +1,6 @@
 <?php
 
-namespace neptune8\Providers;
+namespace Neptune8\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'neptune8\Http\Controllers';
+    protected $namespace = 'Neptune8\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

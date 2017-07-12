@@ -1,6 +1,6 @@
 <?php
 
-namespace neptune8;
+namespace Neptune8;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function articles() {
+        return $this->hasMany('Neptune8/Article');
+    }
 }

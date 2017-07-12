@@ -1,6 +1,6 @@
 <?php
 
-namespace neptune8\Providers;
+namespace Neptune8\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'neptune8\Events\Event' => [
-            'neptune8\Listeners\EventListener',
+        'Neptune8\Events\Event' => [
+            'Neptune8\Listeners\EventListener',
         ],
     ];
 

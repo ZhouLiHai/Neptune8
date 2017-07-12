@@ -1,6 +1,6 @@
 <?php
 
-namespace neptune8\Providers;
+namespace Neptune8\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Broadcast;

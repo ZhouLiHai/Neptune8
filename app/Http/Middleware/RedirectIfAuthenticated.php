@@ -1,6 +1,6 @@
 <?php
 
-namespace neptune8\Http\Middleware;
+namespace Neptune8\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

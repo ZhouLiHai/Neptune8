@@ -19,7 +19,7 @@
             "database"
         ],
         "psr-4": {
-            "neptune8\\": "app/"
+            "Neptune8\\": "app/"
         }
     },
     "autoload-dev": {

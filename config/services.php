@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => neptune8\User::class,
+        'model' => Neptune8\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

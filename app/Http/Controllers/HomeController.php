@@ -1,6 +1,6 @@
 <?php
 
-namespace neptune8\Http\Controllers;
+namespace Neptune8\Http\Controllers;
 
 use Illuminate\Http\Request;
 
