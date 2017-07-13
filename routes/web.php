@@ -13,12 +13,13 @@
 
 Route::get('/', 'ArticleController@index');
 
-Route::get('/article/{id}', 'ArticleController@show');
+Route::get('/article/show/{id}', 'ArticleController@show');
+
 
 Route::group(['prefix' => 'article', 'middleware' => 'auth'], function () {
     Route::post('/store', 'ArticleController@store')->name('article.store');
     Route::post('/update/{id}', 'ArticleController@update')->name('article.update');
-    Route::post('/edit/{id}', 'ArticleController@edit')->name('article.edit');
+    Route::get('/edit', 'ArticleController@edit')->name('article.edit');
     Route::post('/destroy/{id}', 'ArticleController@destroy')->name('article.destroy');
 });
 

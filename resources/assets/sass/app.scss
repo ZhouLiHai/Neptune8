@@ -7,3 +7,54 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.blog-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.blog-title {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  font-size: 26px;
+}
+
+.blog-description {
+  padding-top: 10px;
+  font-size: 16px;
+  color: #999;
+}
+
+body {
+  font: 300 100%/1.25 'Helvetica Neue', Helvetica, 'Lantinghei SC', 'Hiragino Sans GB', sans-serif;
+  font-size: 16px;
+  line-height: 180%;
+  background-color: #ffffff;
+}
+
+.nav-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  font-size: 56px;
+  padding: 60px 30px 30px;
+  text-align: center;
+  border-bottom: #5e5e5e;
+}
+
+.nav-title a{
+  text-decoration: none;
+}
+
+.title-label {
+  font-size: 16px;
+}
+
+.footer-info {
+  font-family: Lato, PingFang SC, Microsoft YaHei, sans-serif;
+  font-size: small;
+  margin-top: 10px;
+  padding-top: 40px;
+  text-align: center;
+}
