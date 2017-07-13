@@ -10,13 +10,16 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $articles = Article::all()->map(function ($item, $key) {
+            return ['id' => $item->id, 'title' => $item->title];
+        });
+        return view('article.index', ['articles' => $articles]);
     }
 
     public function show($id)
     {
         $article = Article::findOrfail($id);
-        return view('layouts.blog')->with($article);
+        return view('article.show', ['article' => $article]);
     }
 
     public function store(Request $request)
@@ -42,7 +45,8 @@ class ArticleController extends Controller
 
     public function update($id)
     {
-
+        $article = Article::findOrFail($id);
+        return view('article.edit', ['article' => $article]);
     }
 
     public function edit()
@@ -52,7 +56,8 @@ class ArticleController extends Controller
 
     public function destroy($id)
     {
-
+        Article::destroy($id);
+        return redirect()->route('article.index');
     }
 }
 

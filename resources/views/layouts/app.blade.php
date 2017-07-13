@@ -76,4 +76,5 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
+@include('layouts.footer')
 </html>
