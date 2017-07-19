@@ -9,7 +9,7 @@
                 {{ csrf_field() }}
                 <textarea class="form-control" rows="1" placeholder="标题" name="title">{{ isset($article->title) ? $article->title : old('title') }}
                 </textarea>
-                <textarea class="form-control" rows="1" placeholder="分类" name="category_id">{{ isset($article->category_id) ? $article->category_id : old('category_id') }}
+                <textarea class="form-control" rows="1" placeholder="分类" name="category">{{ isset($article->category) ? $article->category : old('category') }}
                 </textarea>
                 <textarea class="form-control" rows="16" placeholder="内容" name="content">{{ isset($article->content) ? $article->content : old('content') }}
                 </textarea>

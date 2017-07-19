@@ -2,12 +2,25 @@
 
 namespace Neptune8\Http\Controllers;
 
+use DebugBar\DebugBar;
 use Illuminate\Support\Facades\Auth;
 use Neptune8\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ArticleController extends Controller
 {
+    public function blog()
+    {
+        $a = Article::find(4)->category()->first();
+
+        $articles = Article::all()->map(function ($item, $key) {
+            return ['id' => $item->id, 'title' => $item->title, 'category' => $item->category()->first()->c];
+        });
+        dd($articles);
+        return view('blog', ['articles' => $articles]);
+    }
+
     public function index()
     {
         $articles = Article::all()->map(function ($item, $key) {
@@ -33,7 +46,7 @@ class ArticleController extends Controller
         $article = new Article;
         $article->content = $request->get('content');
         $article->title = $request->get('title');
-        $article->category_id = 1;
+        $article->category_id = 2;
         $article->user_id = Auth::user()->getAuthIdentifier();
 
         $article->save();
