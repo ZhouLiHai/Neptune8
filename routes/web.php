@@ -13,7 +13,7 @@
 
 Route::get('/', 'ArticleController@blog');
 
-Route::get('/article/show/{id}', 'ArticleController@show');
+Route::get('/article/show/{id}', 'ArticleController@show')->name('article.show');
 
 
 Route::group(['prefix' => 'article', 'middleware' => 'auth'], function () {

@@ -9,13 +9,13 @@
                     <div class="blog-header">
                         <h1 class="blog-title"> <a href="{{ route('article.show', $article->id )}}">{{ $article->title }}</a></h1>
 
-                        <p class="lead blog-description"> {{ $article->category }} - {{ $article->created_at }} </p>
+                        <p class="lead blog-description"> {{ $article->category['name'] }} - {{ $article->created_at }} </p>
                     </div>
                     <div class="blog-main">
-                        {!! $article->content !!}
+                        {!! $article['content'] !!}
                     </div>
                 @endforeach
-                {!! $articles->render() !!}
+                {{--{!! $articles->render() !!}--}}
             </div>
         </div>
     </div>

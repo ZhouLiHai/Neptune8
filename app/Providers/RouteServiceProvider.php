@@ -4,6 +4,7 @@ namespace Neptune8\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use File
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,10 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $this->app->resolving(function ($object, $app) {
+//           dd($object);
+        });
+
 
         parent::boot();
     }

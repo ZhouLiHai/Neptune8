@@ -7,17 +7,13 @@ use Illuminate\Support\Facades\Auth;
 use Neptune8\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Neptune8\Category;
 
 class ArticleController extends Controller
 {
     public function blog()
     {
-        $a = Article::find(4)->category()->first();
-
-        $articles = Article::all()->map(function ($item, $key) {
-            return ['id' => $item->id, 'title' => $item->title, 'category' => $item->category()->first()->c];
-        });
-        dd($articles);
+        $articles = Article::with('category')->get();
         return view('blog', ['articles' => $articles]);
     }
 
