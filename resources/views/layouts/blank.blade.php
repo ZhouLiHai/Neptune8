@@ -17,13 +17,9 @@
     </style>
 </head>
 <body>
-<div class="container">
-    @include('layouts.head')
-    @yield('content')
-</div>
-    @include('layouts.footer')
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+@yield('content')
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

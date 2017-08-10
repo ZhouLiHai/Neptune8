@@ -1,10 +1,11 @@
-<div class="container">
-    <div class="row">
-        <div class="nav-title col-md-8 col-md-offset-2">
-            <a href="{{ url('/blog') }}">
-                Neptune8
-            </a>
-            <span class="label label-primary title-label">Blog</span>
-        </div>
+<div class="header">
+    <div class="site-logo">Neptune8</div>
+    <div class="side-menu">
+        <ul>
+            <li><a href="#">博客</a></li>
+            <li><a href="#">作品</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">登录</a></li>
+        </ul>
     </div>
 </div>

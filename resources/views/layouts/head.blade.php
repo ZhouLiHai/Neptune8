@@ -1,23 +1,11 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Neptune8's Blog</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <!-- Scripts -->
-    <script>
-        window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
-        ]) !!};
-    </script>
-</head>
+<div class="header">
+    <div class="site-logo">Neptune8</div>
+    <div class="side-menu">
+        <ul>
+            <li><a href="{{ url('/blog') }}">博客</a></li>
+            <li><a href="#">作品</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="{{ url('/login') }}">登录</a></li>
+        </ul>
+    </div>
+</div>

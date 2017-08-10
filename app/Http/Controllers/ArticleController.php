@@ -13,7 +13,8 @@ class ArticleController extends Controller
 {
     public function practice()
     {
-        return view("practice");
+//        return view("practice");
+        return view('auth.login');
     }
 
     public function blog()

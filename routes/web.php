@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'ArticleController@blog');
+Route::get('/blog', 'ArticleController@blog')->name('blog');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/p', 'ArticleController@practice');
 
@@ -52,5 +53,3 @@ Route::group(['prefix' => 'comment', 'middleware' => 'auth'], function () {
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
