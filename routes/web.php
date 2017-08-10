@@ -13,6 +13,8 @@
 
 Route::get('/', 'ArticleController@blog');
 
+Route::get('/p', 'ArticleController@practice');
+
 Route::get('/article/show/{id}', 'ArticleController@show')->name('article.show');
 
 
@@ -52,4 +54,3 @@ Route::group(['prefix' => 'comment', 'middleware' => 'auth'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-

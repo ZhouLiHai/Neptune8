@@ -11,6 +11,11 @@ use Neptune8\Category;
 
 class ArticleController extends Controller
 {
+    public function practice()
+    {
+        return view("practice");
+    }
+
     public function blog()
     {
         $articles = Article::with('category')->get();
@@ -39,10 +44,15 @@ class ArticleController extends Controller
             'category' => 'required|max:8'
         ]);
 
+        if ($request->get('category') != 2){
+            session()->flash('success', "文章类型错误!");
+            return redirect()->route('article.edit')->withInput();
+        }
+
         $article = new Article;
         $article->content = $request->get('content');
         $article->title = $request->get('title');
-        $article->category_id = 2;
+        $article->category_id = $request->get('category');
         $article->user_id = Auth::user()->getAuthIdentifier();
 
         $article->save();
@@ -69,4 +79,3 @@ class ArticleController extends Controller
         return redirect()->route('article.index');
     }
 }
-
