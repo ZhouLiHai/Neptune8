@@ -2,9 +2,13 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <title>Neptune8</title>
+
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="shortcut icon" href="{{ URL::asset('/images/favicon.ico') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
@@ -18,13 +22,24 @@
 </head>
 <body>
 <div class="container">
-        @include('layouts.head')
-        @include('layouts.sub-head')
-        @yield('content')
+    <div class="header">
+        <div class="site-logo">Neptune8</div>
+        <div class="side-menu">
+            <ul>
+                <li><a href="{{ url('/blog') }}">博客</a></li>
+                <li><a href="#">作品</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="{{ url('/login') }}">登录</a></li>
+            </ul>
+        </div>
+    </div>
+    @yield('content')
 </div>
-        @include('layouts.footer')
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+<div class="footer">
+    Developed By ZhouLiHai,Powered By Laravel. © Neptune8 2017. All rights reserved. 鲁ICP备16041720号
+</div>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
