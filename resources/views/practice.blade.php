@@ -17,30 +17,10 @@
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <div class="site-logo">Neptune8</div>
-        <div class="side-menu">
-            <ul>
-                <li><a href="#">博客</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">关于</a></li>
-                <li><a href="#">登录</a></li>
-            </ul>
-        </div>
+    <div id="app">
+        <editor></editor>
     </div>
-    <div class="sub-header">
-        <img src="{{ URL::asset("/images/front-page.jpg") }}">
-    </div>
-    <div class="slogan">
-        “她还太年轻，不知道生活并不会免费地赠与，而人自命运中收受的一切，早已在暗中标好了价格。”
-    </div>
-    <div class="separator"></div>
-    <div class="main-content">
-        <div class="main-content-col"></div>
-        <div class="main-content-col"></div>
-    </div>
-</div>
-
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
