@@ -12,7 +12,7 @@
 */
 
 Route::get('/blog', 'ArticleController@blog')->name('blog');
-Route::get('/', 'HomeController@index');
+Route::get('/', 'ArticleController@main');
 Route::get('/home', 'HomeController@home')->name('home');
 Route::get('/article/show/{id}', 'ArticleController@show')->name('article.show');
 

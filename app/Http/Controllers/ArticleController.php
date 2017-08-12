@@ -17,6 +17,11 @@ class ArticleController extends Controller
 //        return view('auth.login');
     }
 
+    public function main()
+    {
+        return view('main');
+    }
+
     public function blog()
     {
         $articles = Article::with('category')->get();
