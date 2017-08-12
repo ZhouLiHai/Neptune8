@@ -29,7 +29,16 @@
                 <li><a href="{{ url('/blog') }}">博客</a></li>
                 <li><a href="#">作品</a></li>
                 <li><a href="#">关于</a></li>
-                <li><a href="{{ url('/login') }}">登录</a></li>
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">登录</a></li>
+                @else
+                    <li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        {{ csrf_field() }}
+                        <button type="submit">退出登录</button>
+                    </form>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
