@@ -7,7 +7,17 @@
         {{ csrf_field() }}
 
         标题: <input type="text" name="title" value="{{ isset($article->title) ? $article->title : old('title') }}"><br>
-        分类: <input type="text" name="category" value="{{ isset($article->category) ? $article->category : old('category') }}"><br>
+        分类:
+        <select name="category">
+            @foreach($categories as $category)
+                <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+            @endforeach
+        </select>
+        <br>
+        标签:
+            @foreach($tags as $tag)
+                <input name="tag{{ $tag['id'] }}" type="checkbox">{{ $tag['name'] }}<br>
+            @endforeach
         内容: <input type="text" name="content" value="{{ isset($article->content) ? $article->content : old('content') }}"><br>
         <button type="submit">发布</button>
     </form>

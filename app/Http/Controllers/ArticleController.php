@@ -8,13 +8,13 @@ use Neptune8\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Neptune8\Category;
+use Neptune8\Tag;
 
 class ArticleController extends Controller
 {
     public function practice()
     {
         return view("practice");
-//        return view('auth.login');
     }
 
     public function main()
@@ -47,21 +47,23 @@ class ArticleController extends Controller
         $this->validate($request, [
             'content' => 'required|max:10000',
             'title' => 'required|max:80',
-            'category' => 'required|max:8'
         ]);
 
-        if ($request->get('category') != 2){
-            session()->flash('success', "文章类型错误!");
-            return redirect()->route('article.edit')->withInput();
-        }
-
         $article = new Article;
+
         $article->content = $request->get('content');
         $article->title = $request->get('title');
         $article->category_id = $request->get('category');
         $article->user_id = Auth::user()->getAuthIdentifier();
 
         $article->save();
+
+        $tags = Tag::all();
+        foreach ($tags as $tag){
+            if($request->get('tag'.$tag['id']) != null) {
+                $article->tags()->toggle($tag['id']);
+            }
+        }
 
         session()->flash('success', "文章发布成功~");
 
@@ -76,7 +78,12 @@ class ArticleController extends Controller
 
     public function edit()
     {
-        return view('article.edit');
+        $categories = Category::all();
+        $tags = Tag::all();
+        return view('article.edit', [
+            'categories' => $categories,
+            'tags' => $tags
+        ]);
     }
 
     public function destroy($id)
