@@ -50,4 +50,4 @@ Route::group(['prefix' => 'comment', 'middleware' => 'auth'], function () {
 });
 
 
-//Auth::routes();
+Auth::routes();

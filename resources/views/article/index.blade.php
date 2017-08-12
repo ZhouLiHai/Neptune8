@@ -1,6 +1,7 @@
 @extends('../layouts.app')
 
 @section('content')
+    <div class="center-block">
     <ol>
         @foreach ($articles as $article)
                 <li>
@@ -12,4 +13,5 @@
                 </li>
         @endforeach
     </ol>
+    </div>
 @endsection

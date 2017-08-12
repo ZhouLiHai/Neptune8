@@ -2,6 +2,7 @@
 
 @section('content')
     @include('layouts.message')
+    <div class="center-block">
     <form action="{{ route('article.store') }}" method="POST">
         {{ csrf_field() }}
 
@@ -10,4 +11,5 @@
         内容: <input type="text" name="content" value="{{ isset($article->content) ? $article->content : old('content') }}"><br>
         <button type="submit">发布</button>
     </form>
+    </div>
 @endsection
