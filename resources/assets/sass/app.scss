@@ -167,6 +167,10 @@ input:focus {
   font: inherit;
 }
 
-#logout-form > button:active {
+* {
+  outline: none;
+}
+
+#logout-form > button:active,button:focus {
   outline: none;
 }

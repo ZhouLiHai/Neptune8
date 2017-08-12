@@ -26,6 +26,7 @@
         <div class="site-logo">Neptune8</div>
         <div class="side-menu">
             <ul>
+                <li><a href="{{ url('/') }}">首页</a></li>
                 <li><a href="{{ url('/blog') }}">博客</a></li>
                 <li><a href="#">作品</a></li>
                 <li><a href="#">关于</a></li>
