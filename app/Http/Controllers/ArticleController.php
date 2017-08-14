@@ -2,13 +2,12 @@
 
 namespace Neptune8\Http\Controllers;
 
-use DebugBar\DebugBar;
 use Illuminate\Support\Facades\Auth;
 use Neptune8\Article;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use Neptune8\Category;
 use Neptune8\Tag;
+use Parsedown;
 
 class ArticleController extends Controller
 {
@@ -39,6 +38,8 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::findOrfail($id);
+        $markdownParser = new Parsedown();
+        $article->content = $markdownParser->text($article->content);
         return view('article.show', ['article' => $article]);
     }
 
@@ -72,8 +73,15 @@ class ArticleController extends Controller
 
     public function update($id)
     {
+        $categories = Category::all();
+        $tags = Tag::all();
+
         $article = Article::findOrFail($id);
-        return view('article.edit', ['article' => $article]);
+        return view('article.edit', [
+            'article' => $article,
+            'categories' => $categories,
+            'tags' => $tags
+        ]);
     }
 
     public function edit()
