@@ -23,7 +23,7 @@ class ArticleController extends Controller
 
     public function blog()
     {
-        $articles = Article::with('category')->get();
+        $articles = Article::with('category')->orderBy('created_at', 'desc')->simplePaginate(10);;
         return view('blog', ['articles' => $articles]);
     }
 
