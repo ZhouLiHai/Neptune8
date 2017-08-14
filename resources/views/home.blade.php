@@ -10,7 +10,6 @@
         .home-bar {
             margin-left: auto;
             margin-right: auto;
-            margin-top: 100px;
             border-right: 1px solid black;
         }
 
