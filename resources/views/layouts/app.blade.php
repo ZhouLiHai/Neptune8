@@ -25,7 +25,7 @@
     <div class="header">
         <div class="site-logo">Neptune8</div>
         <div class="side-menu">
-            <ul>
+            <ol>
                 <li><a href="{{ url('/') }}">首页</a></li>/
                 <li><a href="{{ url('/blog') }}">博客</a></li>/
                 <li><a href="#">作品</a></li>/
@@ -38,7 +38,7 @@
                     </form>
                     </li>
                 @endif
-            </ul>
+            </ol>
         </div>
     </div>
     @yield('content')
