@@ -23,7 +23,14 @@ class ArticleController extends Controller
 
     public function blog()
     {
-        $articles = Article::with('category')->orderBy('created_at', 'desc')->simplePaginate(10);;
+        $markdownParser = new Parsedown();
+
+        $articles = Article::with('category')->orderBy('created_at', 'desc')->simplePaginate(10);
+
+        foreach ($articles as $article) {
+            $article->content =$markdownParser->text($article->content);
+        }
+
         return view('blog', ['articles' => $articles]);
     }
 
