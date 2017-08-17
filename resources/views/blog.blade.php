@@ -8,7 +8,7 @@
             <p class="article-sub-header"> {{ $article->category['name'] }} {{ $article->created_at->toFormattedDateString() }} </p>
         </div>
         <div class="article-content">
-            {!! print($article['content']) !!}
+            {!! $article['content'] !!}
         </div>
     @endforeach
     {!! $articles->render() !!}
