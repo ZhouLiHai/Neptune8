@@ -18,7 +18,7 @@
             @foreach($tags as $tag)
                 <input name="tag{{ $tag['id'] }}" type="checkbox">{{ $tag['name'] }}<br>
             @endforeach
-        内容: <input type="text" name="content" value="{{ isset($article->content) ? $article->content : old('content') }}"><br>
+        内容: <textarea  rows="4" cols="50" name="content" value="{{ isset($article->content) ? $article->content : old('content') }}"></textarea>
         <button type="submit">发布</button>
     </form>
     </div>
