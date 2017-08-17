@@ -11,5 +11,5 @@
             {!! print($article['content']) !!}
         </div>
     @endforeach
-    {{--{!! $articles->render() !!}--}}
+    {!! $articles->render() !!}
 @endsection

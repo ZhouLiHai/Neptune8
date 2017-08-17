@@ -186,3 +186,13 @@ input:focus {
 #logout-form > button:active,button:focus {
   outline: none;
 }
+
+.pagination {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pagination > li {
+  display: inline-block;
+  margin: 15px;
+}
